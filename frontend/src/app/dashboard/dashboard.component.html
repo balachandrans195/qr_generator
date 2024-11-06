@@ -1,0 +1,79 @@
+<div class="logout-container">
+  <button (click)="logout()">Logout</button>
+</div>
+
+<div *ngIf="studentData">
+  <h3>{{ studentData.name }}</h3>
+  <p><strong>Register Number:</strong> {{ studentData.register_number }}</p>
+  <p><strong>College Name:</strong> {{ studentData.college_name }}</p>
+  <p><strong>University:</strong> {{ studentData.university }}</p>
+  <p><strong>Date of Birth:</strong> {{ studentData.dob | date }}</p>
+  <p><strong>Department ID:</strong> {{ studentData.department }}</p>
+  <p><strong>Department Name:</strong> {{ studentData.department_name }}</p>
+
+  <table border="1" style="width: 100%; text-align: left;">
+    <thead>
+      <tr>
+        <th>Semester</th>
+        <th>Subjects</th>
+        <th>Payment</th>
+        <th>Payment Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let semester of semesters">
+        <td>{{ semester.semester }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let subject of semester.subjects">
+              {{ subject.subject_name }}
+            </li>
+          </ul>
+        </td>
+        <td>
+          <div *ngIf="semester.hasFutureDate">
+                      Total Amount : 700
+
+            <button
+              (click)="payForSemester(semester, 'Online Payment')"
+              [disabled]="semester.paymentSuccessful"
+            >
+              {{ semester.paymentSuccessful ? 'Payment Successful' : 'Online Payment' }}
+            </button>
+            <button
+              (click)="payForSemester(semester, 'Cash Payment')"
+              [disabled]="semester.paymentSuccessful"
+            >
+              {{ semester.paymentSuccessful ? 'Payment Successful' : 'Cash Payment' }}
+            </button>
+          </div>
+          <div *ngIf="!semester.hasFutureDate">
+            <p>No upcoming payments required.</p>
+          </div>
+        </td>
+        <td>
+          <span *ngIf="semester.paymentSuccessful">Payment Successful</span>
+          <span *ngIf="!semester.paymentSuccessful">Pending</span>
+
+          <div *ngIf="semester.paymentSuccessful">
+            <button (click)="openQrCodeDialog(semester)">Generate QR Code</button>
+            <button class="hall-ticket-button" (click)="openHallTicketDialog(semester)">View Hall Ticket</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!studentData">
+  <p>Loading student data...</p>
+</div>
+
+<!-- QR Code Modal -->
+<div *ngIf="showQrCodeDialog" class="qr-code-modal">
+  <div class="qr-code-content">
+    <span class="close-btn" (click)="closeQrCodeDialog()">&times;</span>
+    <h2>Student Hall Ticket QR Code</h2>
+    <img [src]="qrCodeDataUrl" alt="QR Code" />
+  </div>
+</div>

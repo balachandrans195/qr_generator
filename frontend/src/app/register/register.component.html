@@ -1,0 +1,93 @@
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="register-table">
+  <h2>Register</h2>
+  <table>
+    <tbody>
+      <!-- Name Field -->
+      <tr>
+        <td><label>Name</label></td>
+        <td>
+          <input formControlName="name" required />
+          <div *ngIf="registerForm.get('name')?.hasError('pattern') && registerForm.get('name')?.touched" class="error-message">
+            Name should contain only letters and not start with a space.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Register Number Field -->
+      <tr>
+        <td><label>Register Number</label></td>
+        <td>
+          <input formControlName="register_number" required />
+          <div *ngIf="registerForm.get('register_number')?.hasError('pattern') && registerForm.get('register_number')?.touched" class="error-message">
+            Register number must be exactly 12 digits.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Department Field -->
+      <tr>
+        <td><label>Department</label></td>
+        <td>
+          <select formControlName="department" required>
+            <option *ngFor="let department of departments" [value]="department.id">{{ department.name }}</option>
+          </select>
+        </td>
+      </tr>
+
+      <!-- College Name Field -->
+      <tr>
+        <td><label>College Name</label></td>
+        <td>
+          <input formControlName="college_name" required />
+          <div *ngIf="registerForm.get('college_name')?.hasError('pattern') && registerForm.get('college_name')?.touched" class="error-message">
+            College name should contain only letters and not start with a space.
+          </div>
+        </td>
+      </tr>
+
+      <!-- University Name Field -->
+      <tr>
+        <td><label>University Name</label></td>
+        <td>
+          <input formControlName="university" required />
+          <div *ngIf="registerForm.get('university')?.hasError('pattern') && registerForm.get('university')?.touched" class="error-message">
+            University name should contain only letters and not start with a space.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Date of Birth Field -->
+      <tr>
+        <td><label>Date of Birth</label></td>
+        <td>
+          <input type="date" formControlName="dob" required />
+          <div *ngIf="registerForm.get('dob')?.hasError('invalidAge') && registerForm.get('dob')?.touched" class="error-message">
+            You must be at least 18 years old .
+          </div>
+        </td>
+      </tr>
+
+      <!-- Password Field with Toggle -->
+      <tr>
+        <td><label>Password</label></td>
+        <td style="position: relative;">
+          <input [type]="showPassword ? 'text' : 'password'" formControlName="password" required />
+          <button type="button" (click)="togglePasswordVisibility()" class="password-toggle">
+            <span *ngIf="showPassword">Hide</span>
+            <span *ngIf="!showPassword">Show</span>
+          </button>
+          <div *ngIf="registerForm.get('password')?.hasError('minlength') && registerForm.get('password')?.touched" class="error-message">
+            Password must be at least 6 characters long.
+          </div>
+        </td>
+      </tr>
+
+      <!-- Submit Button -->
+      <tr>
+        <td colspan="2">
+          <button type="submit">Register</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

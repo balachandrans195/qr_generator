@@ -1,0 +1,18 @@
+<div class="bill-container">
+    <h2>Payment Successful</h2>
+    <p><strong>Student Name:</strong> {{ data.studentName }}</p> <!-- Display student name -->
+    <p><strong>Student ID:</strong> {{ data.studentId }}</p>
+    <p><strong>Register number ID:</strong> {{ data.registerNumber }}</p>
+    <p><strong>Department:</strong> {{ data.departmentName }}</p> <!-- Display department name -->
+    <p><strong>Semester Number:</strong> {{ data.semesterNumber }}</p>
+    <p><strong>college name:</strong> {{ data.collegeName }}</p>
+    <p><strong>University:</strong> {{ data.university }}</p>
+    <h3>Subjects:</h3>
+    <ul>
+      <li *ngFor="let subject of data.subjects">{{ subject.subject_name }}</li>
+    </ul>
+    <p><strong>Payment Status:</strong> Successful</p>
+    <button (click)="printBill()">Print Bill</button>
+    <button (click)="closeDialog()">Close</button>
+  </div>
+  

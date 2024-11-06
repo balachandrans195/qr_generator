@@ -1,0 +1,7 @@
+/.idea
+/.venv
+/.angular
+/.vscode
+/frontend/node_modules
+
+

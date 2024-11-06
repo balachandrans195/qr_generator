@@ -1,0 +1,112 @@
+/* Centering Form Container */
+.register-table {
+    max-width: 400px; /* Max width for the table */
+    margin: 50px auto; /* Center the form */
+    padding: 20px; /* Padding around the form */
+    background-color: #ffffff; /* White background */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    font-family: Arial, sans-serif; /* Font style */
+}
+
+/* Form Header */
+h2 {
+    text-align: center; /* Center header */
+    color: #444; /* Dark gray */
+    margin-bottom: 20px; /* Space below header */
+}
+
+/* Table Styles */
+table {
+    width: 100%; /* Full width of the container */
+    border-collapse: collapse; /* Collapse borders */
+}
+
+td {
+    padding: 10px; /* Space inside table cells */
+    vertical-align: middle; /* Vertical alignment */
+}
+
+/* Label */
+label {
+    display: block; /* Block display for labels */
+    color: #666; /* Light gray */
+    font-size: 0.9em; /* Font size */
+}
+
+/* Input Fields */
+input, select {
+    width: 100%; /* Full width */
+    padding: 8px; /* Padding inside fields */
+    font-size: 0.9em; /* Font size */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 4px; /* Rounded corners */
+    outline: none; /* No outline */
+    transition: border-color 0.3s ease; /* Transition for border color */
+}
+
+/* Focus Effect for Input Fields */
+input:focus, select:focus {
+    border-color: #3b82f6; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(59, 130, 246, 0.3); /* Light blue shadow on focus */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: #d9534f; /* Red color for error messages */
+    font-size: 0.85em; /* Slightly smaller font size */
+    margin-top: 5px; /* Space above the message */
+    margin-bottom: 5px; /* Space below the message */
+}
+
+/* Submit Button */
+button[type="submit"] {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside button */
+    font-size: 1em; /* Font size */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    background-color: #3b82f6; /* Blue background */
+    color: white; /* White text */
+    transition: background-color 0.3s ease; /* Transition effects */
+}
+
+/* Button Hover Effect */
+button[type="submit"]:hover {
+    background-color: #2563eb; /* Darker blue on hover */
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 480px) {
+    .register-table {
+        padding: 15px; /* Adjust padding for mobile */
+    }
+
+    input, select, button[type="submit"] {
+        font-size: 0.85em; /* Smaller font size on mobile */
+    }
+}
+
+/* Error Outline for Invalid Inputs */
+input.ng-invalid.ng-touched, select.ng-invalid.ng-touched {
+    border-color: #d9534f; /* Red border for invalid fields */
+    box-shadow: 0 0 5px rgba(217, 83, 79, 0.3); /* Red shadow for invalid fields */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #3b82f6;
+    cursor: pointer;
+    font-size: 0.9em;
+    padding: 0;
+}
+
+.password-toggle:hover {
+    color: #2563eb;
+}

@@ -1,0 +1,34 @@
+<!-- payment.component.html -->
+<div class="payment-container">
+  <h2 class="payment-heading">Online Payment</h2>
+
+  <div class="student-info">
+    <p><strong>Student Name:</strong> <span class="info-text">{{ studentName }}</span></p>
+    <p><strong>Register Number:</strong> <span class="info-text">{{ registerNumber }}</span></p>
+    <p><strong>Department:</strong> <span class="info-text">{{ departmentName }}</span></p>
+    <p><strong>College Name:</strong> <span class="info-text">{{ collegeName }}</span></p>
+    <p><strong>University:</strong> <span class="info-text">{{ university }}</span></p>
+    <p><strong>Semester Number:</strong> <span class="info-text">{{ semesterNumber }}</span></p>
+  </div>
+
+  <h3 class="subjects-heading">Subjects for Payment:</h3>
+  <ul class="subjects-list">
+    <li *ngFor="let subject of subjects" class="subject-item">{{ subject.subject_name }}</li>
+  </ul>
+
+  <div class="upi-section">
+    <label for="upiId" class="upi-label">Enter UPI ID:</label>
+    <input
+      type="text"
+      id="upiId"
+      [(ngModel)]="upiId"
+      placeholder="example@oksbi"
+      class="upi-input"
+    />
+    <button (click)="verifyUPI()" class="verify-button">Verify UPI</button>
+  </div>
+
+  <p *ngIf="paymentMessage" class="payment-message">{{ paymentMessage }}</p>
+
+  <button (click)="completePayment()" [disabled]="!upiVerified" class="complete-button">Complete Payment : Rs:700</button>
+</div>

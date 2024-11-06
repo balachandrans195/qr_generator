@@ -1,0 +1,46 @@
+<div class="student-detail">
+    <h2>Student Details</h2>
+    <table>
+      <tr>
+        <th>Name</th>
+        <td>{{ studentData.name }}</td>
+      </tr>
+      <tr>
+        <th>Register Number</th>
+        <td>{{ studentData.register_number }}</td>
+      </tr>
+      <tr>
+        <th>College Name</th>
+        <td>{{ studentData.college_name }}</td>
+      </tr>
+      <tr>
+        <th>University</th>
+        <td>{{ studentData.university }}</td>
+      </tr>
+      <tr>
+        <th>Department Name</th>
+        <td>{{ studentData.department_name }}</td>
+      </tr>
+      <tr>
+        <th>Semester</th>
+        <td>{{ studentData.semester }}</td>
+      </tr>
+    </table>
+    
+    <h3>Subjects</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Subject Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of studentData.subjects">
+          <td>{{ subject.name }}</td>
+          <td>{{ subject.date }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

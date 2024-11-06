@@ -1,0 +1,128 @@
+/* payment.component.css */
+.payment-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+  }
+  
+  .payment-container:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .payment-heading {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .student-info {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #e1f5fe;
+    border-radius: 5px;
+  }
+  
+  .info-text {
+    color: #34495e; /* Darker color for the info text */
+  }
+  
+  .subjects-heading {
+    color: #2980b9;
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .subjects-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .subject-item {
+    padding: 8px;
+    border: 1px solid #2980b9;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .subject-item:hover {
+    background-color: #2980b9;
+    color: #fff;
+  }
+  
+  .upi-section {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .upi-label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .upi-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    transition: border-color 0.3s;
+  }
+  
+  .upi-input:focus {
+    border-color: #2980b9;
+    outline: none;
+  }
+  
+  .verify-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2980b9;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .verify-button:hover {
+    background-color: #1a5989;
+  }
+  
+  .payment-message {
+    text-align: center;
+    margin: 10px 0;
+    color: #07b01d; /* Red color for error/success messages */
+  }
+
+  .error-message {
+    text-align: center;
+    margin: 10px 0;
+    color: #e74c3c; /* Red color for error/success messages */
+  }
+  
+  .complete-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #27ae60;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+  }
+  
+  .complete-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .complete-button:hover:not(:disabled) {
+    background-color: #219653;
+  }
+  

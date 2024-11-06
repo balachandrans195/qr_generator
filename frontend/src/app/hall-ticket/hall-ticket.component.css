@@ -1,0 +1,63 @@
+.hall-ticket-container {
+    padding: 20px;
+    max-width: 500px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .hall-ticket-container h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .hall-ticket-container p,
+  .hall-ticket-container h3 {
+    margin: 8px 0;
+    color: #555;
+  }
+  
+  .subjects-table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+  }
+  
+  .subjects-table th, .subjects-table td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ccc;
+  }
+  
+  .subjects-table th {
+    background-color: #f1f1f1;
+    color: #333;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .button-group button {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button-group button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Hide Print and Close buttons when printing */
+  @media print {
+    .button-group {
+      display: none;
+    }
+  }
+  

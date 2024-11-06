@@ -1,0 +1,79 @@
+<div class="admin-dashboard">
+    <!-- Logout Button -->
+    <div class="logout-container">
+      <button (click)="logout()">Logout</button>
+    </div>
+  
+    <!-- Pending Payments Section -->
+    <div class="payments-section">
+      <h3>Pending Payments</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Register Number</th>
+              <th>Department</th>
+              <th>Semester</th>
+              <th>Subjects</th>
+              <th>Payment Status</th>
+              <th>Payment Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let payment of pendingPayments">
+              <td>{{ payment.student_name }}</td>
+              <td>{{ payment.student_register_number }}</td>
+              <td>{{ payment.department_name }}</td>
+              <td>{{ payment.semester_number }}</td>
+              <td>{{ payment.subjects }}</td>
+              <td>{{ payment.payment_successful ? 'Completed' : 'Pending' }}</td>
+              <td>{{ payment.payment_date | date: 'dd-MM-yyyy HH:mm' }}</td>
+              <td>
+                <button (click)="acceptPayment(payment.id)">Accept</button>
+                <button (click)="rejectPayment(payment.id)">Reject</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+    <!-- Completed Payments Section with Search -->
+    <div class="payments-section">
+      <h3>Completed Payments</h3>
+      <input
+        type="text"
+        placeholder="Search by Register Number"
+        [(ngModel)]="searchRegisterNumber"
+        (input)="filterCompletedPayments()"
+        class="search-input"
+      />
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Register Number</th>
+              <th>Department</th>
+              <th>Semester</th>
+              <th>Subjects</th>
+              <th>Payment Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let payment of filteredCompletedPayments">
+              <td>{{ payment.student_name }}</td>
+              <td>{{ payment.student_register_number }}</td>
+              <td>{{ payment.department_name }}</td>
+              <td>{{ payment.semester_number }}</td>
+              <td>{{ payment.subjects }}</td>
+              <td>{{ payment.payment_date | date: 'dd-MM-yyyy HH:mm' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

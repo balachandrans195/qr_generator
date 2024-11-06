@@ -1,0 +1,31 @@
+<div class="hall-ticket-container">
+    <h2>Hall Ticket</h2>
+    <p><strong>Student Name:</strong> {{ data.studentData.name }}</p>
+    <p><strong>Register Number:</strong> {{ data.studentData.register_number }}</p>
+    <p><strong>College Name:</strong> {{ data.studentData.college_name }}</p>
+    <p><strong>University:</strong> {{ data.studentData.university }}</p>
+    <p><strong>Department Name:</strong> {{ data.studentData.department_name }}</p>
+    <p><strong>Semester:</strong> {{ data.semester.semester }}</p>
+  
+    <h3>Subjects and Dates</h3>
+    <table class="subjects-table">
+      <thead>
+        <tr>
+          <th>Subject Name</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let subject of data.semester.subjects">
+          <td>{{ subject.subject_name }}</td>
+          <td>{{ subject.subject_date | date: 'mediumDate' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="button-group">
+      <button mat-button (click)="printHallTicket()">Print</button>
+      <button mat-button (click)="closeDialog()">Close</button>
+    </div>
+  </div>
+  

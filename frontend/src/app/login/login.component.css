@@ -1,0 +1,106 @@
+/* Form Container */
+.login-form {
+    max-width: 360px;
+    margin: 60px auto;
+    padding: 40px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 0.7s ease-in-out;
+    position: relative;
+}
+
+/* Form Header */
+h2 {
+    color: #333;
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    letter-spacing: 1px;
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label */
+label {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.4);
+}
+
+/* Login Button */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-login:hover {
+    background-color: #388E3C;
+    box-shadow: 0 4px 8px rgba(56, 142, 60, 0.3);
+}
+
+.btn-login:active {
+    transform: scale(0.98);
+}
+
+/* Register Button */
+.btn-register {
+    background-color: transparent;
+    color: #4CAF50;
+    font-size: 0.9em;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-register:hover {
+    color: #388E3C;
+    transform: translateX(2px);
+}
+
+/* Animation for Form */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
